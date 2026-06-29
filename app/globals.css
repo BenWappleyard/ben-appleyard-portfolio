@@ -1,26 +1,114 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@font-face {
+  font-family: "Camden";
+  src: url("/fonts/camden.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@font-face {
+  font-family: "Thermal";
+  src: url("/fonts/thermal-black.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@font-face {
+  font-family: "ThermalLight";
+  src: url("/fonts/thermal-light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ThermalLightItalic";
+  src: url("/fonts/thermal-light-italic.otf") format("opentype");
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "ThermalRegular";
+  src: url("/fonts/thermal-regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-surface:     #FAFAFA;
+  --color-surface-alt: #EDE9E8;
+  --color-ink:         #111111;
+  --color-mid:         #595959;
+  --color-muted:       #767676;
+  --color-accent:      #1A1AFF;
+  --color-edge:        #E0DDD9;
+
+  --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+.dark {
+  --color-surface:     #111111;
+  --color-surface-alt: #1A1A1A;
+  --color-ink:         #F0EDE6;
+  --color-mid:         #9A9A94;
+  --color-muted:       #888884;
+  --color-accent:      #7B7BFF;
+  --color-edge:        #2A2A28;
+}
+
+@keyframes typewriter-cursor {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes haze-1 {
+  0%, 100% { transform: translate(0px,     0px)   scale(1);    border-radius: 58% 42% 55% 45% / 52% 60% 40% 48%; }
+  25%       { transform: translate(-180px,  140px) scale(1.14); border-radius: 42% 58% 38% 62% / 62% 38% 58% 42%; }
+  50%       { transform: translate(140px,  -200px) scale(0.88); border-radius: 65% 35% 60% 40% / 44% 56% 44% 56%; }
+  75%       { transform: translate(220px,   80px)  scale(1.09); border-radius: 38% 62% 48% 52% / 58% 42% 62% 38%; }
+}
+@keyframes haze-2 {
+  0%, 100% { transform: translate(0px,     0px)   scale(1);    border-radius: 52% 48% 62% 38% / 44% 56% 44% 56%; }
+  33%       { transform: translate(240px,  -160px) scale(1.16); border-radius: 40% 60% 44% 56% / 60% 40% 56% 44%; }
+  66%       { transform: translate(-160px,  200px) scale(0.86); border-radius: 62% 38% 54% 46% / 48% 52% 40% 60%; }
+}
+@keyframes haze-3 {
+  0%, 100% { transform: translate(0px,     0px)   scale(1);    border-radius: 44% 56% 50% 50% / 56% 44% 58% 42%; }
+  40%       { transform: translate(-200px, -180px) scale(1.13); border-radius: 60% 40% 42% 58% / 40% 60% 46% 54%; }
+  80%       { transform: translate(180px,   140px) scale(0.9);  border-radius: 50% 50% 64% 36% / 52% 48% 62% 38%; }
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes name-orbit {
+  from { offset-distance: 0%; }
+  to   { offset-distance: 100%; }
+}
+
+/* Shift hero content right only on MacBook Pro-sized viewports (1280–1535px) */
+@media (min-width: 1280px) and (max-width: 1535px) {
+  .hero-shift {
+    margin-left: 2.5rem;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-surface);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
