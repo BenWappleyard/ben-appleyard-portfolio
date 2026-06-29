@@ -1,36 +1,36 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useState } from "react"; // useState kept for future sound feature
 import { useTheme } from "next-themes";
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [mounted, setMounted] = useState(false);
-  const [soundOn, setSoundOn] = useState(true);
+  // const [soundOn, setSoundOn] = useState(true);
   const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     setMounted(true);
-    const stored = localStorage.getItem("sound");
-    if (stored !== null) setSoundOn(stored === "true");
+    // const stored = localStorage.getItem("sound");
+    // if (stored !== null) setSoundOn(stored === "true");
   }, []);
 
-  const playClick = () => {
-    const audio = new Audio("/sounds/apple-crunch.mp3");
-    audio.play();
-    setTimeout(() => {
-      audio.pause();
-      audio.currentTime = 0;
-    }, 1500);
-  };
+  // const playClick = () => {
+  //   const audio = new Audio("/sounds/apple-crunch.mp3");
+  //   audio.play();
+  //   setTimeout(() => {
+  //     audio.pause();
+  //     audio.currentTime = 0;
+  //   }, 1500);
+  // };
 
-  const toggleSound = () => {
-    const next = !soundOn;
-    setSoundOn(next);
-    localStorage.setItem("sound", String(next));
-    playClick();
-  };
+  // const toggleSound = () => {
+  //   const next = !soundOn;
+  //   setSoundOn(next);
+  //   localStorage.setItem("sound", String(next));
+  //   playClick();
+  // };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 144);
@@ -66,6 +66,7 @@ export default function Nav() {
             Contact
           </a>
 
+          {/* Sound button — banked for future use
           {mounted && (
             <button
               onClick={toggleSound}
@@ -86,7 +87,7 @@ export default function Nav() {
                 </svg>
               )}
             </button>
-          )}
+          )} */}
 
           {mounted && (
             <button

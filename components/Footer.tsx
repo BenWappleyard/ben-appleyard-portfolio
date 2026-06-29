@@ -1,7 +1,7 @@
 const socialLinks = [
   { label: "LinkedIn", href: "https://www.linkedin.com/in/ben-appleyard/" },
   { label: "GitHub", href: "https://github.com/BenWappleyard" },
-  { label: "Email", href: "mailto:" },
+  { label: "appleben13@gmail.com", href: "mailto:appleben13@gmail.com" },
 ];
 
 export default function Footer() {
