@@ -44,7 +44,7 @@ const fraunces = Fraunces({
 });
 
 export const metadata: Metadata = {
-  title: "Ben Appleyard — Designer, Builder, Strategist",
+  title: "Ben Appleyard",
   description:
     "Portfolio of Ben Appleyard — designer, builder and strategist working at the intersection of craft, clarity, and commercial impact.",
 };
