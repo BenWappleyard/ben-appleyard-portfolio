@@ -29,7 +29,7 @@ const projects = [
     category: "Brand & Identity",
     year: "",
     blurb: "Personalising Bwin.",
-    description: "Building personalisation and customisation into the sportsbook experience, creating a malleable, tailored product. DATA POINT",
+    description: "Building personalisation and customisation into the sportsbook experience, creating a malleable, tailored product.",
     bg: "transparent",
     href: "#",
     linkText: "Find out more about personalising Bwin",

@@ -50,7 +50,13 @@ export default function Nav() {
         <Link href="/" aria-label="Home" />
 
         <nav className="flex items-center gap-10">
-          {(["About", "Work", "Writing"] as const).map((label) => (
+          <Link
+            href="/about"
+            className="text-[14px] font-medium text-mid hover:text-ink transition-colors duration-200"
+          >
+            About
+          </Link>
+          {(["Work", "Writing"] as const).map((label) => (
             <a
               key={label}
               href={`/#${label.toLowerCase()}`}
